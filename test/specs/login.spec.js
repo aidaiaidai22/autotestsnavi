@@ -12,7 +12,7 @@ describe('Login page on Navigator CRM',()=> {
         await LoginPage.loginField.setValue('Admin');
         await LoginPage.passwordField.setValue('Admin@Navi');
         await LoginPage.submitButton.click();
-        await browser.pause(5000);
+        await LoginPage.createClientButton.waitForDisplayed({ timeout: 10000 });
         await expect(browser).toHaveUrlContaining('clients')
     })
    
